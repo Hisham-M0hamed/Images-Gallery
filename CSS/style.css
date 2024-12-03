@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:monospace;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #F1F4FD;
+}
+
+.slider {
+    max-width: 1100px;
+    width: 95%;
+    position: relative;
+}
+
+.slider .list{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    font-size: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-bottom: 25px;
+}
+.slider .list::-webkit-scrollbar{
+    display: none;
+}
+
+.slider .item {
+    width: 300px;
+    height: 340px;
+    object-fit: cover;
+}
+.slider .item img{
+    width: 100%;
+    height: 100%;
+}
+
+.scrollbar{
+    width: 100%;
+    height: 20px;
+    /* background-color: #c65252; */
+    display: flex;
+    align-items: center;
+}
+.scrollbar .track{
+    height: 2px;
+    width: 100%;
+    background-color: #ccc;
+    position: relative;
+    border-radius: 4px;
+}
+.scrollbar:hover .track{
+    height: 4px;
+}
+
+.scrollbar .thumb{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: #222;
+    border-radius: inherit;
+    cursor: grab;
+}
+.scrollbar .thumb:active{
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+}
+
+.scrollbar .thumb::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+}
+
+.buttons .button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+    color: #ccc;
+    background-color: #000;
+    font-size: 2.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+.buttons .button:hover{
+    background-color: #444;
+}
+.buttons .button#prev{
+    left:-20px;
+}
+.buttons .button#next{
+    right: -20px;
+}
+
+
